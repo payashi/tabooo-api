@@ -4,9 +4,11 @@ from collections import defaultdict
 from concurrent import futures
 
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 from google.cloud import language_v1
 
 app = Flask(__name__)
+CORS(app, resources={r"/classify": {"origins": "chrome-extension://*"}})
 
 # Set up for Cloud Natural Language API
 client = language_v1.LanguageServiceClient()
