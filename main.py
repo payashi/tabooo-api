@@ -37,13 +37,6 @@ def classify_single_url(url: str):
     return (category, url)
 
 
-@app.route('/')
-def hello_world():
-    return 'hello'
-
-def hoge(url):
-    return ('hoge', url)
-
 @app.post('/classify')
 def classify():
     ret = defaultdict(list)
