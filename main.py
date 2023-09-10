@@ -36,7 +36,7 @@ def classify_single_url(url: str):
         category = category.split('/')[1]
     except:
         category = 'Unclassified'
-    return (category, url)
+    return (f"{category}", f"{url}")
 
 
 @app.post('/classify')
